@@ -8,7 +8,6 @@ const createIssueSchema = z.object({
 })
 
 export async function POST(request : NextRequest){
-    console.log(request);
     const body = await request.json();
     const validation = createIssueSchema.safeParse(body);
     if(!validation.success){
